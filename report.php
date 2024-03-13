@@ -11,11 +11,6 @@ include("session.php");
     <title>Cargo Ltd - Report</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./imgs/icon.ico" type="image/x-icon">
-    <script>
-        function print() {
-            window.print();
-        }
-    </script>
 </head>
 <body>
 <div class="dashboard-container">

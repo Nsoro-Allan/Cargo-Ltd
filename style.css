@@ -369,3 +369,75 @@ body {
   background: rgba(72, 101, 197, 0.856);
   cursor: pointer;
 }
+
+.right-content-title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.right-content-title h1 {
+  color: rgb(61, 95, 209);
+  text-transform: capitalize;
+}
+
+.right-content-title .long-line {
+  padding: 1.5px;
+  width: 97%;
+  background: rgb(61, 95, 209);
+  margin-top: 8px;
+}
+
+.dashboard-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.dashboard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: auto;
+  border: 2px solid rgb(61, 95, 209);
+  padding: 20px 10px;
+  border-radius: 6px;
+  background: rgb(61, 95, 209);
+  color: #fff;
+}
+
+.dashboard-card img {
+  width: 22%;
+}
+
+.dashboard-card h4 {
+  margin-top: 10px;
+}
+
+.dashboard-card a {
+  margin-top: 10px;
+  padding: 3px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: rgb(61, 95, 209);
+  background: #fff;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in;
+}
+
+.dashboard-card a:hover {
+  background: #ffffff52;
+  color: #fff;
+  transition: 0.3s ease-in;
+}

@@ -24,7 +24,27 @@ include("session.php");
             </div>
 
             <div class="right-content">
-
+                <div class="right-content-title">
+                    <h1>Hi, <?php echo $_SESSION['cargo_manager'];?>...</h1>
+                    <div class="long-line"></div>
+                </div>
+                <div class="dashboard-card-container">
+                    <div class="dashboard-card">
+                        <img src="./imgs/icon.ico">
+                        <h4>Total Furnitures:</h4>
+                        <a href="#">10</a>
+                    </div>
+                    <div class="dashboard-card">
+                        <img src="./imgs/icon.ico">
+                        <h4>Total Furnitures:</h4>
+                        <a href="#">10</a>
+                    </div>
+                    <div class="dashboard-card">
+                        <img src="./imgs/icon.ico">
+                        <h4>Total Furnitures:</h4>
+                        <a href="#">10</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
