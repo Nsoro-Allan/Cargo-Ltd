@@ -1,6 +1,7 @@
 <?php
 include("connection.php");
 include("session.php");
+include("calculations.php");
 ?>
 
 <!DOCTYPE html>
@@ -32,17 +33,22 @@ include("session.php");
                     <div class="dashboard-card">
                         <img src="./imgs/icon.ico">
                         <h4>Total Furnitures:</h4>
-                        <a href="#">10</a>
+                        <a href="./furnitures.php"><?php echo $total_furniture;?></a>
                     </div>
                     <div class="dashboard-card">
                         <img src="./imgs/icon.ico">
-                        <h4>Total Furnitures:</h4>
-                        <a href="#">10</a>
+                        <h4>Total Imports:</h4>
+                        <a href="./import.php"><?php echo $total_imports;?></a>
                     </div>
                     <div class="dashboard-card">
                         <img src="./imgs/icon.ico">
-                        <h4>Total Furnitures:</h4>
-                        <a href="#">10</a>
+                        <h4>Total Exports:</h4>
+                        <a href="./export.php"><?php echo $total_exports;?></a>
+                    </div>
+                    <div class="dashboard-card">
+                        <img src="./imgs/icon.ico">
+                        <h4>Total Managers:</h4>
+                        <a href="./managers.php"><?php echo $total_managers;?></a>
                     </div>
                 </div>
             </div>
