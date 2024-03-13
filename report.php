@@ -11,47 +11,64 @@ include("session.php");
     <title>Cargo Ltd - Report</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./imgs/icon.ico" type="image/x-icon">
+    <script>
+        function print() {
+            window.print();
+        }
+    </script>
 </head>
 <body>
-    <div class="dashboard-container">
-        <?php
-            include("sidebar.php");
-        ?>
-        <div class="dashboard-right">
-            <div class="right-title">
-                <h1>Cargo Ltd Report</h1>
-                <div class="line"></div>
-            </div>
+<div class="dashboard-container">
+    <?php
+        include("sidebar.php");
+    ?>
+    <div class="dashboard-right">
+        <div class="right-title">
+            <h1>Cargo Ltd Report</h1>
+            <div class="line"></div>
+        </div>
 
-            <div class="right-content">
+        <div class="right-content">
             <div class="buttons">
                 <a href="#" onclick="print()">Print Report...</a>
             </div>
             <table>
-                    <tr>
-                        <th>Furniture Name</th>
-                        <th>Furniture Owner Name</th>
-                    </tr>
-                    <?php
-                    $select=$con->query("SELECT * FROM `furniture`");
-                    if(mysqli_num_rows($select) > 0){
-                    while($row = mysqli_fetch_assoc($select)){
-                    ?>
-                    <tr>
-                        <td><?php echo $row['furniture_name'];?></td>
-                        <td><?php echo $row['furniture_owner_name'];?></td>
+                <tr>
+                    <th>Furniture Name</th>
+                    <th>Furniture Owner Name</th>
+                    <th>Total Import Quantity</th>
+                    <th>Total Export Quantity</th>
+                </tr>
+                <?php
+                // Query to get the report data
+                $query = "SELECT f.furniture_name, f.furniture_owner_name, 
+                        COALESCE(SUM(i.quantity), 0) AS total_import_quantity,
+                        COALESCE(SUM(e.quantity), 0) AS total_export_quantity
+                        FROM furniture f
+                        LEFT JOIN import i ON f.furniture_id = i.furniture_id
+                        LEFT JOIN export e ON f.furniture_id = e.furniture_id
+                        GROUP BY f.furniture_id";
 
-                    </tr>
-                    <?php    
+                $result = $con->query($query);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
+                        <tr>
+                            <td><?php echo $row['furniture_name']; ?></td>
+                            <td><?php echo $row['furniture_owner_name']; ?></td>
+                            <td><?php echo $row['total_import_quantity']; ?></td>
+                            <td><?php echo $row['total_export_quantity']; ?></td>
+                        </tr>
+                        <?php
                     }
-                    }
-                    else{
-                        echo "<h1>No Report Available...</h1>";
-                    }
-                    ?>
-                </table>
-            </div>
+                } else {
+                    echo "<tr><td colspan='4'>No Report Available...</td></tr>";
+                }
+                ?>
+            </table>
         </div>
     </div>
+</div>
 </body>
 </html>
