@@ -34,13 +34,6 @@ CREATE TABLE `export` (
   `quantity` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `export`
---
-
-INSERT INTO `export` (`export_id`, `furniture_id`, `export_date`, `quantity`) VALUES
-(1, 1, '2024-03-14', '10'),
-(3, 3, '2024-03-15', '25');
 
 -- --------------------------------------------------------
 
@@ -54,13 +47,6 @@ CREATE TABLE `furniture` (
   `furniture_owner_name` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `furniture`
---
-
-INSERT INTO `furniture` (`furniture_id`, `furniture_name`, `furniture_owner_name`) VALUES
-(1, 'Chairs', 'Cargo Ltd...'),
-(3, 'Tables', 'Cargo Ltd...');
 
 -- --------------------------------------------------------
 
@@ -75,13 +61,6 @@ CREATE TABLE `import` (
   `quantity` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `import`
---
-
-INSERT INTO `import` (`import_id`, `furniture_id`, `import_date`, `quantity`) VALUES
-(2, 1, '2024-03-13', '10'),
-(4, 3, '2024-03-13', '15');
 
 -- --------------------------------------------------------
 
