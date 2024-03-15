@@ -55,7 +55,7 @@
                 <label>Tel:</label>
                 <input type="tel" name="tel" placeholder="Enter your Tel..." min="10" max="10" required>
                 <button type="submit" name="signup">Signup</button>
-                <p>Already Have an account? <a href="index.php">Signin</a></p>
+                <p>Already Have an account? <a href="login.php">Signin</a></p>
             </form>
         </div>
     </div>
